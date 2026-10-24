@@ -18,7 +18,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
       - name: Install dependencies
         run: npm install
@@ -38,46 +37,23 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          
       - run: npm install
       - run: npm run build:web
       - run: npx cap add android
       - run: npx cap sync android
+      
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
+          
       - name: Assemble debug APK
         working-directory: android
         run: ./gradlew assembleDebug
+        
       - uses: actions/upload-artifact@v4
         with:
           name: prismamd-debug-apk
           path: android/app/build/outputs/apk/debug/*.apk
-
-  # iOS build stays commented out — it needs a macos-14 runner (billed at a
-  # higher per-minute rate on GitHub-hosted runners) and code-signing setup
-  # that's out of scope until you're ready to ship to TestFlight. Uncomment
-  # when you get there.
-  # build-ios:
-  #   name: Build iOS (simulator archive)
-  #   runs-on: macos-14
-  #   needs: verify
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: actions/setup-node@v4
-  #       with:
-  #         node-version: '20'
-  #         cache: 'npm'
-  #     - run: npm install
-  #     - run: npm run build:web
-  #     - run: npx cap add ios
-  #     - run: npx cap sync ios
-  #     - name: Install CocoaPods
-  #       run: cd ios/App && pod install
-  #     - name: Build for simulator
-  #       working-directory: ios/App
-  #       run: |
-  #         xcodebuild -workspace App.xcworkspace -scheme App \
-  #           -destination 'generic/platform=iOS Simulator' build
