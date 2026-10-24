@@ -1,0 +1,19 @@
+{
+  "appId": "com.prismamd.app",
+  "appName": "PRISMAMD",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "backgroundColor": "#1a1a1e",
+  "android": {
+    "allowMixedContent": false
+  },
+  "ios": {
+    "contentInset": "always"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "backgroundColor": "#1a1a1e",
+      "showSpinner": false
+    }
+  }
+}

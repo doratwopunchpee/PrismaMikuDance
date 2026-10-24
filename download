@@ -1,0 +1,22 @@
+node_modules/
+dist/
+build/
+www/
+*.log
+.DS_Store
+.env
+.vscode/
+.idea/
+
+# Native shell build artifacts
+/android/
+/ios/
+*.apk
+*.ipa
+
+# User-generated content folders if synced locally during dev
+/PRISMAMD/Models/
+/PRISMAMD/Motions/
+/PRISMAMD/Projects/
+/PRISMAMD/Textures/
+/PRISMAMD/Exports/

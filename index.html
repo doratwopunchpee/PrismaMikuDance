@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+<title>PRISMAMD</title>
+<style>
+  :root {
+    --bg-0: #1a1a1e;
+    --bg-1: #222226;
+    --panel: #26262b;
+    --border: #35353b;
+    --text: #e6e6e8;
+    --text-dim: #8a8a92;
+    --accent: #5b8cff;
+  }
+  html, body {
+    margin: 0; padding: 0; height: 100%; background: var(--bg-0);
+    color: var(--text); font-family: -apple-system, Roboto, "Segoe UI", sans-serif;
+    overflow: hidden; -webkit-user-select: none; user-select: none;
+  }
+  #viewport { position: absolute; inset: 0; background: var(--bg-1); }
+  #toolbar {
+    position: absolute; top: 0; left: 0; right: 0; height: 48px;
+    background: var(--panel); border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; padding: 0 12px; font-size: 13px;
+    color: var(--text-dim); letter-spacing: 0.02em;
+  }
+  #status { margin-left: auto; }
+</style>
+</head>
+<body>
+  <div id="toolbar">PRISMAMD <span id="status">initializing…</span></div>
+  <canvas id="viewport"></canvas>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
