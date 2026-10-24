@@ -3,8 +3,8 @@
 Open-source, mobile-first 3D MMD animation application.
 
 Viewport and object workflow modeled on **Prisma3D**; visual language
-modeled on **Synthesizer V** (flat dark-charcoal panels, compact type,
-zero flash). Targets Android/iOS through a cross-platform WebView shell
+modeled on random professional shit because i fucking hate neon.
+Targets Android/iOS through a cross-platform WebView shell
 (Capacitor/Tauri-mobile class tooling), rendering with WebGL2 and an
 optional WebGPU/WGSL path.
 
